@@ -38,7 +38,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js','.ts', '.vue', '.json'],
     alias: {
       'vue': 'mpvue',
       '@': resolve('src')
@@ -47,6 +47,14 @@ module.exports = {
   },
   module: {
     rules: [
+      { 
+        test: /\.ts$/, 
+				loader: 'ts-loader',
+        include: [resolve('src')],
+				options: {
+					appendTsSuffixTo: [/\.vue$/],
+				}
+			},
       {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',

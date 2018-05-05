@@ -24,7 +24,14 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    // allow semicolon
+    'semi': 0,
+    // allow single and double quotes
+    'quotes': 0,
+    // dont't need space before function parameter
+    'space-before-function-paren':0,
+    'key-spacing': 0,
   },
   globals: {
     App: true,
