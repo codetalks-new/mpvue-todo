@@ -24,6 +24,7 @@
 
 <script>
 import card from '@/components/card'
+import TodoApp from '@/TodoApp'
 
 export default {
   data () {
@@ -34,7 +35,8 @@ export default {
   },
 
   components: {
-    card
+    card,
+    TodoApp
   },
 
   methods: {

@@ -1,3 +1,8 @@
+<template>
+  <todo-app/>
+</template>
+
+
 <script>
 import TodoApp from "./TodoApp"
 export default {
