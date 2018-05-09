@@ -4,13 +4,19 @@ var config = require('../config')
 // for mp
 var isProduction = true
 
+const loaders = utils.cssLoaders({
+  sourceMap:isProduction ? config.build.productionSourceMap : config.dev.cssSourceMap,
+  extract: isProduction
+})
+// currently didn't work with ts-loader and awesome-typescript-loader 5.0
+const tsLoaders = {
+  ts: [ 'babel-loader', 'awesome-typescript-loader' ]
+}
+
+Object.assign(loaders, tsLoaders)
+
 module.exports = {
-  loaders: utils.cssLoaders({
-    sourceMap: isProduction
-      ? config.build.productionSourceMap
-      : config.dev.cssSourceMap,
-    extract: isProduction
-  }),
+  loaders: loaders,
   transformToRequire: {
     video: 'src',
     source: 'src',
